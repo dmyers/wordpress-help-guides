@@ -14,7 +14,7 @@
 		
 		<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'theme' ); ?></p>
 
-		<?php get_search_form(); ?>
+		<?php theme_search('search-large', 'Have a question? Ask or enter a search term here.', true); ?>
 	</div>
 
 </div>

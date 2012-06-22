@@ -193,11 +193,11 @@ function theme_pagination() {
 	<?php
 }
 
-function theme_search ( $class_name, $placeholder = 'Enter a search term here.' ) {
+function theme_search ( $classname, $placeholder = 'Enter a search term here.', $show_big_button = false ) {
 	?>
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form <?php echo $class_name ?>">
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form <?php echo $classname ?>">
 		<input type="text" name="s" placeholder="<?php esc_attr_e( $placeholder, 'theme' ); ?>" class="search" />
-		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="search-submit" />
+		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="<?php if ($show_big_button) { ?>btn-primary <?php } ?>search-submit" />
 		<div class="clearfix"></div>
 	</form>
 	<?php
