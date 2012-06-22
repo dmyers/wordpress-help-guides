@@ -13,7 +13,7 @@
 
 <?php if ( have_posts() ) : ?>
 
-	<?php the_search_form('search-large', 'Have a question? Ask or enter a search term here.'); ?>
+	<?php theme_search('search-large', 'Have a question? Ask or enter a search term here.'); ?>
 
 	<div class="content">
 

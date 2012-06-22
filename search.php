@@ -19,7 +19,7 @@
 
 		<?php endwhile; ?>
 
-		<?php the_pagination(); ?>
+		<?php theme_pagination(); ?>
 
 	<?php else : ?>
 

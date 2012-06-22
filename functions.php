@@ -53,10 +53,7 @@ add_action( 'after_setup_theme', 'theme_setup' );
 /**
  * Load our theme scripts.
  */
-function theme_load_scripts() {
-    wp_enqueue_style( 'farbtastic' );
-    wp_enqueue_script( 'farbtastic' );
-}
+function theme_load_scripts() {}
 /**
  * Tell WordPress to run theme_load_scripts() when the 'init' hook is run.
  */
@@ -131,7 +128,6 @@ function theme_css() {
 	$version = filemtime(realpath(dirname(__FILE__)).'/style.css');
 
 	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
-
 	wp_enqueue_style( 'style' );
 }
 
@@ -171,7 +167,7 @@ function theme_breadcrumbs() {
 /**
  * Display navigation to next/previous pages.
  */
-function the_pagination() {
+function theme_pagination() {
 	global $wp_query;
 
 	$total_pages = $wp_query->max_num_pages;
@@ -197,6 +193,16 @@ function the_pagination() {
 	<?php
 }
 
+function theme_search ( $class_name, $placeholder = 'Enter a search term here.' ) {
+	?>
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form <?php echo $class_name ?>">
+		<input type="text" name="s" placeholder="<?php esc_attr_e( $placeholder, 'theme' ); ?>" class="search" />
+		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="search-submit" />
+		<div class="clearfix"></div>
+	</form>
+	<?php
+}
+
 function the_preview() {
 	?>
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -208,16 +214,6 @@ function the_preview() {
 			<?php the_modified_date(); ?> <?php the_modified_time(); ?>
 		</div>
 	</div>
-	<?php
-}
-
-function the_search_form ( $class_name, $placeholder = 'Enter a search term here.' ) {
-	?>
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form <?php echo $class_name ?>">
-		<input type="text" name="s" placeholder="<?php esc_attr_e( $placeholder, 'theme' ); ?>" class="search" />
-		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="search-submit" />
-		<div class="clearfix"></div>
-	</form>
 	<?php
 }
 
