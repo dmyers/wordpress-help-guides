@@ -9,8 +9,8 @@
 1. Move the folder wp-help into wp-content/themes/help
 2. Enable the theme from the admin panel
 
-## Screenshots 
+## Screenshot
 
 ![][1]
 
- [1]: https://github.com/gravityonmars/wp-help/raw/master/wp-help/screenshot-big.png
+ [1]: https://github.com/dmyers/wp-help/raw/master/screenshot-big.png
