@@ -1,0 +1,492 @@
+/*
+Theme Name: Help Guides
+Author: Derek Myers
+Author URI: http://derekmyers.com/
+Description: A simple help desk articles/guides theme.
+Version: 1.0
+*/
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+:focus {/* remember to define focus styles! */
+	outline: 0;
+}
+body {
+	background: #fff;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+table {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a img {
+	border: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* Global */
+body, input, textarea {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	color: #575757;
+	line-height: 18px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+ul, ol {
+	margin: 0 0 1.625em 2.5em;
+}
+ul {
+	list-style: disc;
+}
+strong {
+	font-weight: bold;
+}
+cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	font-family: Georgia, "Bitstream Charter", serif;
+	font-style: italic;
+	font-weight: normal;
+	margin: 0 3em;
+}
+blockquote em,
+blockquote i,
+blockquote cite {
+	font-style: normal;
+}
+blockquote cite {
+	color: #666;
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+pre {
+	background: #f4f4f4;
+	font: 13px "Courier 10 Pitch", Courier, monospace;
+	line-height: 1.5;
+	overflow: auto;
+}
+code {
+	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+address {
+	display: block;
+	margin: 0 0 1.625em;
+}
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+	border: 1px solid #ddd;
+	color: #888;
+}
+input[type=text]:focus,
+textarea:focus {
+	border-color: #999;
+	color: #373737;
+}
+textarea {
+	padding-left: 3px;
+	width: 98%;
+}
+input[type=text] {
+	padding: 3px;
+}
+
+a {
+	color: #549BCC;
+	text-decoration: none;
+}
+p a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	color: #79B94A;
+	font-size: 30px;
+	margin-bottom: 20px;
+	line-height: 36px;
+}
+h2 {
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+h3 {
+	color: #ABABAB;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+h4 {
+	color: #777777;
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 950px;
+}
+.help-link {
+	margin-top: 40px;
+	padding-bottom: 20px;
+}
+.help-link a {
+	color: #111;
+	font-size: 22px;
+}
+.help-link a:hover {
+	color: #1982d1;
+	text-decoration: none;
+}
+.breadcrumbs {
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+#content {
+	clear: both;
+	float: left;
+	width: 650px;
+}
+#sidebar {
+	float: left;
+	margin-left: 50px;
+	width: 250px;
+}
+#sidebar h3 {
+	border-bottom: 1px solid #CCCCCC;
+	color: #ABABAB;
+	margin: 21px 0 30px;
+	padding: 0 0 20px;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post {
+	padding-bottom: 40px;
+}
+.post-edit-link {
+	float: right;
+}
+.post .meta {
+	color: #B4B4B4;
+	font-size: 11px;
+	font-weight: bold;
+}
+.post .title {
+	margin-bottom: 20px;
+}
+.post .title .meta {
+	font-size: 13px;
+}
+.category .post p {
+	color: #777777;
+	margin-bottom: 10px;
+	line-height: 22px;
+}
+.category .post .meta {
+	text-transform: uppercase;
+}
+.post img,
+.widget img {
+	max-width: 97.5%;
+}
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+	height: auto;
+}
+img.size-full,
+img.size-large {
+	max-width: 97.5%;
+	width: auto;
+	height: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 1.625em;
+}
+p img,
+.wp-caption {
+	margin-top: 0.4em;
+}
+.wp-caption {
+	background: #eee;
+	margin-bottom: 1.625em;
+	max-width: 96%;
+	padding: 9px;
+}
+.wp-caption img {
+	display: block;
+	margin: 0 auto;
+	max-width: 98%;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+	color: #666;
+	font-family: Georgia, serif;
+	font-size: 12px;
+}
+.wp-caption .wp-caption-text {
+	margin-bottom: 0.6em;
+	padding: 10px 0 5px 40px;
+	position: relative;
+}
+.wp-caption .wp-caption-text:before {
+	color: #666;
+	content: '\2014';
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	margin-right: 5px;
+	position: absolute;
+	left: 10px;
+	top: 7px;
+}
+#content .gallery {
+	margin: 0 auto 1.625em;
+}
+#content .gallery a img {
+	border: none;
+}
+img#wpstats {
+	display: block;
+	margin: 0 auto 1.625em;
+}
+#content .gallery-columns-4 .gallery-item {
+	width: 23%;
+	padding-right: 2%;
+}
+#content .gallery-columns-4 .gallery-item img {
+	width: 100%;
+	height: auto;
+}
+
+img[class*="align"],
+img[class*="wp-image-"],
+#content .gallery .gallery-icon img {
+	border: 1px solid #ddd;
+	padding: 6px;
+}
+.wp-caption img {
+	border-color: #eee;
+}
+a:focus img[class*="align"],
+a:hover img[class*="align"],
+a:active img[class*="align"],
+a:focus img[class*="wp-image-"],
+a:hover img[class*="wp-image-"],
+a:active img[class*="wp-image-"],
+#content .gallery .gallery-icon a:focus img,
+#content .gallery .gallery-icon a:hover img,
+#content .gallery .gallery-icon a:active img {
+	background: #eee;
+	border-color: #bbb;
+}
+.wp-caption a:focus img,
+.wp-caption a:active img,
+.wp-caption a:hover img {
+	background: #fff;
+	border-color: #ddd;
+}
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+blockquote.pull {
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1.6125em;
+	margin: 0 0 1.625em;
+	text-align: center;
+}
+.pull.alignright {
+	margin: 0 0 0 1.625em;
+	text-align: left;
+}
+blockquote.pull.alignleft,
+blockquote.pull.alignright {
+	width: 33%;
+}
+
+
+.widget {
+	clear: both;
+	margin-bottom: 28px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+input.search {
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 14px;
+	height: 22px;
+	line-height: 1.2em;
+	padding: 4px 28px 4px 10px;
+	width: 84%;
+}
+
+.search-submit {
+	border: none;
+	cursor: pointer;
+}
+
+.search-form.search-small {
+	position: relative;
+}
+
+.search-small input.search-submit {
+	background: url('images/search.png') no-repeat 0 0;
+	height: 18px;
+	overflow: hidden;
+	position: absolute;
+	right: 4px;
+	text-indent: -9000px;
+	top: 5px;
+	width: 21px;
+}
+
+.error404 .widget_search,
+.home .widget_search {
+	display: none;
+}
+.home .search-form {
+	margin-bottom: 40px;
+}
+.home .search-large .search {
+	float: left;
+	height: 25px;
+	width: 85%;
+}
+.home .search-large .search-submit {
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	float: left;
+	background: #79B94A;
+	color: #fff;
+	font-size: 15px;
+	height: 34px;
+	width: 83px;
+	margin-left: 5px;
+}
+
+
+a.highlight {
+	background: #eee;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #888888;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 4px 8px;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+a.highlight:hover {
+	background: #79B94A;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.categories .category {
+	float: left;
+	width: 325px;
+	padding-bottom: 20px;
+}
+.categories .category-total {
+	color: #ABABAB;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.categories .category-view-all {
+	margin-left: 5px;
+}
+.categories ul {
+	margin-top: 10px;
+}
+
+.pagination {
+	text-align: center;
+}
+
+.pagination .current {
+	background-color: #DDDDDD;
+	border: 1px solid #CCCCCC;
+	padding: 4px;
+}
