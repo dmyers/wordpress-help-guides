@@ -175,20 +175,30 @@ function theme_pagination() {
 	if ($total_pages <= 1) {
 		return;
 	}
-	
-	$current_page = max(1, get_query_var('paged'));
 
-	$pagination_config = array(
-		'base' => get_pagenum_link(1) . '%_%',
+	$page_link = get_pagenum_link( 1 );
+
+	if ( !empty( $wp_query->query_vars['s'] ) ) {
+		$page_link = home_url( '/' );
+	}
+	
+	$current_page = max( 1, get_query_var( 'paged' ) );
+
+	$pagination = array(
+		'base' => $page_link . '%_%',
 		'format' => 'page/%#%',
 		'current' => $current_page,
 		'total' => $total_pages,
 		'prev_text' => '&lt;&lt;',
 		'next_text' => '&gt;&gt;',
 	);
+
+	if ( !empty( $wp_query->query_vars['s'] ) ) {
+		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+	}
 	?>
 	<div class="pagination">
-		<?php echo paginate_links($pagination_config); ?>
+		<?php echo paginate_links( $pagination ); ?>
 	</div>
 	<?php
 }
@@ -197,7 +207,7 @@ function theme_search ( $classname, $placeholder = 'Enter a search term here.', 
 	?>
 	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form <?php echo $classname ?>">
 		<input type="text" name="s" placeholder="<?php esc_attr_e( $placeholder, 'theme' ); ?>" class="search" />
-		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="<?php if ($show_big_button) { ?>btn-primary <?php } ?>search-submit" />
+		<input type="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="<?php if ($show_big_button) { ?>btn-primary <?php } ?>search-submit" />
 		<div class="clearfix"></div>
 	</form>
 	<?php
