@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 
-<div id="content">
+<div class="content">
 
 	<div id="post-0" class="post error404 not-found">
 		<h1>

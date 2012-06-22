@@ -211,6 +211,16 @@ function the_preview() {
 	<?php
 }
 
+function the_search_form ( $class_name, $placeholder = 'Enter a search term here.' ) {
+	?>
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form <?php echo $class_name ?>">
+		<input type="text" name="s" placeholder="<?php esc_attr_e( $placeholder, 'theme' ); ?>" class="search" />
+		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="search-submit" />
+		<div class="clearfix"></div>
+	</form>
+	<?php
+}
+
 /**
  * Adds rel nofollow string to all HTML A elements in content.
  *

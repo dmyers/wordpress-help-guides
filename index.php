@@ -13,13 +13,9 @@
 
 <?php if ( have_posts() ) : ?>
 
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form search-large">
-		<input type="text" name="s" placeholder="<?php esc_attr_e( 'Have a question? Ask or enter a search term here.', 'theme' ); ?>" class="search" />
-		<input type="submit" name="submit" value="<?php esc_attr_e( 'Search', 'theme' ); ?>" class="search-submit" />
-		<div class="clearfix"></div>
-	</form>
+	<?php the_search_form('search-large', 'Have a question? Ask or enter a search term here.'); ?>
 
-	<div id="content">
+	<div class="content">
 
 		<h3>Browse By Topic</h3>
 

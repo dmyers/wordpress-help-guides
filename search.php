@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 
-<div id="content">
+<div class="content">
 
 	<h3>
 		<?php printf( __( '%d results for "%s"', 'theme' ), $wp_query->found_posts, '<span>' . get_search_query() . '</span>' ); ?>
