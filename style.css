@@ -470,6 +470,9 @@ a.highlight:hover {
 	width: 315px;
 	padding-bottom: 20px;
 }
+.categories .category.last {
+	padding: 0;
+}
 .categories .category-total {
 	color: #ABABAB;
 	font-size: 12px;

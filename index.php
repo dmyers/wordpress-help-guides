@@ -22,14 +22,16 @@
 		<?php
 		$categories = get_categories();
 		$category_count = count($categories);
+		$row_count = $category_count / 2;
 		$c = 1;
+		$r = 1;
 		?>
 
 		<div class="categories">
 
 			<?php foreach ($categories as $category): ?>
 
-				<div class="category">
+				<div class="category<?php if ($r == $row_count) { ?> last<?php } ?>">
 					<div class="category-title">
 						<h4><?php echo $category->name ?></h4>
 					</div>
@@ -58,6 +60,7 @@
 
 				<?php if ($c % 2 === 0): ?>
 					<div class="clearfix"></div>
+					<?php $r++; ?>
 				<?php endif; ?>
 
 				<?php $c++; ?>
