@@ -108,7 +108,7 @@ pre {
 	overflow: auto;
 }
 code {
-	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
 	border-bottom: 1px dotted #666;
@@ -290,8 +290,7 @@ p img,
 	margin: 0 auto;
 	max-width: 98%;
 }
-.wp-caption .wp-caption-text,
-.gallery-caption {
+.wp-caption .wp-caption-text {
 	color: #666;
 	font-family: Georgia, serif;
 	font-size: 12px;
@@ -312,28 +311,9 @@ p img,
 	left: 10px;
 	top: 7px;
 }
-#content .gallery {
-	margin: 0 auto 1.625em;
-}
-#content .gallery a img {
-	border: none;
-}
-img#wpstats {
-	display: block;
-	margin: 0 auto 1.625em;
-}
-#content .gallery-columns-4 .gallery-item {
-	width: 23%;
-	padding-right: 2%;
-}
-#content .gallery-columns-4 .gallery-item img {
-	width: 100%;
-	height: auto;
-}
 
 img[class*="align"],
-img[class*="wp-image-"],
-#content .gallery .gallery-icon img {
+img[class*="wp-image-"] {
 	border: 1px solid #ddd;
 	padding: 6px;
 }
@@ -345,10 +325,7 @@ a:hover img[class*="align"],
 a:active img[class*="align"],
 a:focus img[class*="wp-image-"],
 a:hover img[class*="wp-image-"],
-a:active img[class*="wp-image-"],
-#content .gallery .gallery-icon a:focus img,
-#content .gallery .gallery-icon a:hover img,
-#content .gallery .gallery-icon a:active img {
+a:active img[class*="wp-image-"] {
 	background: #eee;
 	border-color: #bbb;
 }
@@ -392,13 +369,14 @@ blockquote.pull.alignright {
 }
 
 input.search {
+	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	font-size: 14px;
 	height: 22px;
 	line-height: 1.2em;
 	padding: 4px 28px 4px 10px;
-	width: 84%;
+	width: 210px;
 }
 
 .search-submit {
@@ -457,6 +435,9 @@ input.search {
 	white-space: nowrap;
 }
 .btn-primary:hover {
+	border-color: #eee;
+	background: #eee;
+	color: #888888;
 	text-decoration: none;
 }
 
