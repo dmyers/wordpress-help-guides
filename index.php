@@ -33,7 +33,7 @@
 
 				<div class="category<?php if ($r == $row_count) { ?> last<?php } ?>">
 					<div class="category-title">
-						<h4><?php echo $category->name ?></h4>
+						<h4><a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"><?php echo $category->name ?></a></h4>
 					</div>
 
 					<div class="category-meta">

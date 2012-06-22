@@ -470,6 +470,9 @@ a.highlight:hover {
 	width: 315px;
 	padding-bottom: 20px;
 }
+.categories .category h4 a {
+	color: #777777;
+}
 .categories .category.last {
 	padding: 0;
 }
@@ -490,7 +493,6 @@ a.highlight:hover {
 	text-align: center;
 	margin-bottom: 10px;
 }
-
 .pagination .current {
 	background-color: #DDDDDD;
 	border: 1px solid #CCCCCC;
