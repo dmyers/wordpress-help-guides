@@ -97,7 +97,7 @@ add_filter( 'excerpt_length', 'theme_excerpt_length' );
  */
 function theme_auto_excerpt_more( $more ) {
 	global $post;
-	return '&hellip; ' . '<a href="'. get_permalink($post->ID) . '" class="highlight">Read More</a>';;
+	return '&hellip; ' . '<a href="'. get_permalink($post->ID) . '" class="btn-secondary">Read More</a>';;
 }
 add_filter( 'excerpt_more', 'theme_auto_excerpt_more' );
 
@@ -119,7 +119,7 @@ add_filter( 'the_content', 'theme_auto_nofollow' );
  * function tied to the excerpt_more filter hook.
  */
 function theme_edit_post_link( $edit_link ) {
-	return str_replace('class="post-edit-link"', 'class="post-edit-link highlight"', $edit_link);
+	return str_replace('class="post-edit-link"', 'class="post-edit-link btn-secondary"', $edit_link);
 }
 add_filter('edit_post_link', 'theme_edit_post_link');
 
@@ -127,7 +127,7 @@ function theme_css() {
 	// Use the getlastmod date of the CSS style file for the version to help update cache.
 	$version = filemtime(realpath(dirname(__FILE__)).'/style.css');
 
-	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
+	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), $version );
 	wp_enqueue_style( 'style' );
 }
 
@@ -205,7 +205,7 @@ function theme_search ( $class_name, $placeholder = 'Enter a search term here.' 
 
 function the_preview() {
 	?>
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class('preview'); ?>>
 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 		
 		<?php the_excerpt(); ?>

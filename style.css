@@ -247,12 +247,12 @@ h4 {
 .post .title .meta {
 	font-size: 13px;
 }
-.category .post p {
+.post.preview p {
 	color: #777777;
 	margin-bottom: 10px;
-	line-height: 22px;
+	line-height: 23px;
 }
-.category .post .meta {
+.post.preview .meta {
 	text-transform: uppercase;
 }
 .post img,
@@ -446,7 +446,7 @@ input.search {
 }
 
 
-a.highlight {
+.btn-secondary {
 	background: #eee;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -458,10 +458,14 @@ a.highlight {
 	text-transform: uppercase;
 	white-space: nowrap;
 }
-a.highlight:hover {
+.btn-secondary:hover {
 	background: #79B94A;
 	color: #fff;
 	text-decoration: none;
+}
+
+.highlight {
+	background: #FFFAE1;
 }
 
 

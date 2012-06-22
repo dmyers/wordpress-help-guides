@@ -41,7 +41,7 @@
 							<?php echo $category->category_count ?> Articles
 						</span>
 
-						<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" class="highlight category-view-all">VIEW ALL</a>
+						<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" class="btn-secondary category-view-all">VIEW ALL</a>
 					</div>
 
 					<ul class="category-posts">
